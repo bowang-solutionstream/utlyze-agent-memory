@@ -1,0 +1,4 @@
+interface:
+  display_name: "I2E Team"
+  short_description: "Sol-led I2E with durable learning and review gates"
+  default_prompt: "Use $i2e-team to deliver this task with independent reviews, durable failure reuse and an engineering brief."

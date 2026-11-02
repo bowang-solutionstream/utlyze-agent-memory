@@ -7,6 +7,7 @@ The two requested uses share provenance and explicit product scope but retain di
 | Product knowledge | Explain objectives, features, decisions and task acceptance to a fresh session | Sources, exact revisions, status, contradictions and withdrawals remain visible; an agent summary is not approval |
 | Development experience | Preserve attempts, checks, success/failure observations and retrieval feedback | A passing command is a scoped observation, not automatic product success |
 | Learning proposals | Connect experiences to candidate lessons and workflow changes | No automatic policy edit or claim of proven improvement |
+| Owner learning | Retain the engineering concepts and decisions presented after a run | A presented explanation is not evidence of understanding or mastery |
 
 The first implementation uses Python and SQLite for the core, exact lookup and deterministic keyword retrieval. Capture/search need no additional model or embedding API calls. Agent interpretation still consumes model tokens. The existing I2E helper is a separate prerequisite for canonical case operations.
 
@@ -15,6 +16,14 @@ Required context bypasses keyword ranking. When a compact pack cannot contain re
 Task records preserve the exact objective/feature revisions used. Historical provenance must coexist with visible current withdrawal or supersession information. Product/project filters organize private local data; they are not an authentication boundary against a process running as the same OS user.
 
 Learning records keep observations, hypotheses and proposed lessons distinct. Development/training examples must be separate from held-out evaluation examples. Both the old and proposed workflow must be compared on the same held-out set. Comparison metadata is attested evidence to inspect, not an automated evaluator or permission to promote a rule.
+
+## Failure reuse and owner learning
+
+The [I2E learning contract](I2E-LEARNING-CONTRACT.md) adds two requirements to the proposed delivery profile: durable failure capture with retrieval in later decisions, and an immediate concise engineering brief for the owner after each run's status report.
+
+Canonical failure cases remain in the existing I2E case store and use its helper and unchanged schema. Development episodes link their case digests, source revisions and proof. Proposed teaching records link the episode, decisions and evidence; they remain separate from canonical cases and raw evidence. No additional record type is claimed to be implemented by this design amendment.
+
+Corrections and applicability changes retain history. A successful fix requires its own current proof; a useful explanation does not establish that a fix worked. Capture or retrieval failures remain visible gaps. Learning proposals require evaluation before becoming workflow rules.
 
 ## Alternatives considered
 

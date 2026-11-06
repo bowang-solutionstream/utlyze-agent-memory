@@ -1,0 +1,40 @@
+{
+  "status": "incomplete_prototype_no_final_approval",
+  "publication_date": "2026-11-06",
+  "validation_observed_date": "2026-10-30",
+  "original_candidate_sha256": "dddbcd1508c37d6296c76fb4ec55c00184c1ef84db134957a3590c754bbb3209",
+  "original_instructions_sha256": "0cd5d279ceccbec6a14f1164df4fdc9ee676ed5546fd7fa8ee75dbaf06313d17",
+  "original_source_head": "ccd34e3a12ae46279e9af1469d48754a6358681d",
+  "review_input_sha256": "f17a7591e35041b2f68b61a7025dd60259766cb22b51d1506290511a34d66ad1",
+  "files": {
+    ".gitignore": "0bb4fb0ca3e5cf5d0a23b44e915230acbcf2b8ed1937790a37c45e07ed60281e",
+    "ADR.md": "347a285551e60cf3cbd9e81920557e8494559b0d191a9a4311563c73cf18c1e5",
+    "README.md": "65d99690c88c3da8853cce17b63f69fdf0c932fc1f1580f354862271b79588dd",
+    "pyproject.toml": "077c9738b0a3f7c6261bec0d1a615dbbaa5c51271f55761b210e2d7d439b4f73",
+    "scripts/demo.py": "47dc8cdc091d9c2a122160b9d42d6c5b2ea8d94bb1b0464fb55028d85f396b4b",
+    "scripts/verify.py": "aab55d8291e600a525330235cf6539ae65d13af7dc5aa1e926e58b54922472c4",
+    "skill/utlyze-memory/SKILL.md": "19cd1213a2c074a158f3b035302962d94f4109ea7c247a93ae9b83c8508b49b2",
+    "skill/utlyze-memory/scripts/memory.py": "99f21d07b498e76966df47dc38d155a81907b9814afb8124d07105af0071f34b",
+    "tests/protocol.py": "8c9825120d3a0f78e7e9be9c3d22396a03442b4b2e05856e537685950a7eaba9",
+    "tests/test_context_regressions.py": "084a0726ee0cc1dbcd6b8b56eba167a7de36aba5a81b5a99ea45f125f42e9311",
+    "tests/test_memory.py": "f5a22fbd19bb8fe0135a6bc6d6dd909a6010e91f8f7af0c74ba8d3d1157d713e",
+    "utlyze_memory/__init__.py": "5eedd241ed3cde337fbd26cad2981da2e25f2ea86ff8640b7470265cf46311df",
+    "utlyze_memory/__main__.py": "394fc5426e7ae9caa23cb8bee7598b6e5e929d0fae3dc2faaa6df22c261320bf",
+    "utlyze_memory/cases.py": "0aff11037dcb585e45b2cfc6a612e8aaa72ec1afd0a7aa3d7a74f0317d8a9e5a",
+    "utlyze_memory/context.py": "6067435349d5f73ce2c8c99d3b5054bc0e02a24db5b724a213c6c8effe0d2b87",
+    "utlyze_memory/store.py": "210b53441f2c9ac8f7e03b09febbf817c8a73d0ec1d749a1def50207cefde7a9",
+    "utlyze_memory/validation.py": "b7fc15417521ba1a24aa21a46d6a8f8251e8520957307f71a2284bbdca743d5e"
+  },
+  "copy_verification": "All 17 listed files match the frozen local source byte for byte. Publication notes are additional and not part of the original candidate.",
+  "excluded": [
+    "source Git history",
+    "local ancestor-instruction AGENTS snapshot",
+    "runtime databases",
+    "raw task evidence",
+    "canonical failure-case records",
+    "session transcripts",
+    "credentials",
+    "generated Python caches"
+  ],
+  "assurance": "Retained 20 passing tests and current doubt/forward reports; no completed specialist audit reports or independent Astra final approval. No canonical native-v2 full-profile pass."
+}

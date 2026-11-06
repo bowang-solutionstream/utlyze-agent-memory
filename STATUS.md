@@ -1,39 +1,60 @@
-# Progress — 2026-10-30
+# Progress — 2026-11-06
 
-Status: implementation in progress; not a completed release or full-profile I2E pass.
+**Incomplete, unseeded prototype. Source and progress are preserved here; specialist audits and independent final approval remain unfinished. This is not a release or a full-profile I2E pass.**
 
-The user requested a dedicated private GitHub repository and an email handoff instead of starting with an agent-team knowledge pack. Product scopes remain unseeded. No operational database, real episode corpus, global skill installation or automatic activation has occurred. Synthetic test fixtures are separate.
+The user requested a dedicated private GitHub repository and an email handoff, and declined an initial product knowledge pack. No real product scope, operational database, knowledge corpus or global memory-skill installation has been created. Demonstrations used isolated synthetic fixtures.
 
-## Implemented locally
+Start with the [validation summary](docs/VALIDATION.md), [continuation notes](docs/NEXT-STEPS.md), [agent-team direction](docs/TEAM-PLAN.md), and [architecture and alternatives](docs/MEMORY-DESIGN.md). The implementation contract is in [README.md](README.md) and [ADR.md](ADR.md).
 
-- Versioned product objectives, features, decisions and task acceptance links, with explicit project/product scope and source references.
-- Append-only success/failure observations, retrieval feedback and inert lesson/comparison proposals.
-- Local SQLite persistence, idempotent writes, expected-revision conflict checks and crash recovery.
-- Bounded exact/keyword context retrieval, required anchors and known-case retrieval outside keyword ranking.
-- A read-only adapter to the existing I2E failure-case helper; its canonical records and schema remain unchanged.
-- CLI, documentation, a memory skill package, synthetic demonstration and boundary checks.
+## What is implemented
 
-## Verification observed so far
+- Immutable product objectives, features, decisions, constraints and task revisions, with project/product scope, exact source references and task-to-feature/objective links.
+- Append-only attempts, success/failure observations, retrieval feedback and inert lesson/comparison proposals.
+- SQLite transactions, idempotent writes, expected-revision checks and crash recovery.
+- Bounded exact/keyword context retrieval that preserves required anchors, exact task history, conflicts and known failure obligations independently of ranking.
+- A read-only adapter to the existing I2E failure-case helper. Canonical records and their schema remain unchanged.
+- A CLI, memory skill source, documentation, tests, synthetic demonstration and boundary checks.
 
-The initial implementation reached 17 of 18 passing acceptance tests. A missing-reference error-code mismatch and a malformed-helper-response crash were preserved and repaired. All 18 acceptance tests then passed unchanged, along with the focused regression probes.
+The core uses Python/SQLite without model or embedding API calls. Agent reading and reasoning still use tokens. Canonical-case operations additionally need the existing local I2E helper/store and its prerequisites. No framework, hosted provider or daemon was installed.
 
-A 12-step direct CLI demonstration, extended boundary checks and skill format validation passed on that intermediate candidate. These results do not establish final readiness.
+## Verified checkpoint
 
-Fresh independent review subsequently found two additional retrieval defects: overflow recovery could omit local regression-obligation metadata, and historical task context could fail to disclose that an objective had since been withdrawn. Both have been reproduced and preserved with intended failing regression checks. Their focused repair and renewed current proof are in progress.
+The retained execution evidence is from **2026-10-30**. On **2026-11-06**, publication verification confirmed that all **17 source files** still match the frozen manifest byte for byte. This resume did not rerun the engineering lifecycle.
 
-## Remaining before the implementation snapshot
+| Check | Retained result | Limit |
+| --- | --- | --- |
+| Original acceptance tests | 18 passed | Local synthetic evidence, not a production evaluation |
+| Added context regression tests | 2 passed with unchanged RED/GREEN assertions | Targets the two independently discovered retrieval defects |
+| Direct CLI demonstration | 12 steps passed | Actual subprocess inputs, outputs and exits retained privately |
+| Extended boundary checks | Passed | Scope, evidence paths/hashes, strict JSON, budgets, adapter failures and schema refusal |
+| Skill format and relocated-source smoke checks | Passed | Relocated copy on the same Mac; not cross-platform certification |
+| Fresh independent Sol Max doubt reviews D1/D2/D3 | Passed / no remaining material doubt in their scope | These are not the three specialist audits or final approval |
+| Independent skill forward exercise | 14 CLI calls; exactly 3 authorized synthetic appends | One episode, one feedback record, one inert lesson; no measured learning claim |
+| Specialist code/security/test audits | No completed verdicts available | Required before claiming implementation approval |
+| Independent Astra Max final review | Not completed | Required by the currently installed full I2E profile |
+| Canonical native-v2 completion | No pass | Historical documentation exception cannot be truthfully encoded by its current record schema |
 
-1. Finish the two retrieval repairs and rerun current acceptance/regression/demo proof.
-2. Complete current decision challenges and an independent skill forward test.
-3. Complete three distinct independent Sol Max code, security and test audits, then independent Astra Max final review.
-4. Publish a sanitized source snapshot, current results and limitations. Send the detailed email handoff.
+The previous implementation session ended at a service usage limit after freezing specialist inputs. No completed specialist reports or final approval were found when resuming. This publication completes the requested progress checkpoint and handoff; it does not convert those missing reviews into passes.
 
-## Assurance boundary
+## Repairs already included
 
-The implementation uses the installed I2E lifecycle. A proportional documentation clarification exposed a native-v2 record-schema limitation: its behavioral task record cannot represent a wording-only nonbehavioral work exception. The original evidence and exact documentation change are retained separately. A canonical completion pass will not be claimed if the checker cannot truthfully validate the final history. Actual source checks and independent reviews still proceed against the final candidate.
+1. Missing task links now receive the intended creation-validation error rather than a lookup error.
+2. A malformed canonical-helper wrapper produces an unavailable result rather than crashing.
+3. Overflow recovery retains local applicability/regression metadata as well as canonical case digests.
+4. Historical task context preserves its exact facts while exposing current withdrawal or supersession; it cannot revive a withdrawn objective as current authority.
 
-The long-running PM chat is Astra Max; a separate continuing Sol 6.1 Max session owns source implementation, tests, repairs and integration. This should not be described as all coordination having run on Sol.
+Original failures and subsequent proof remain in the private local evidence store. Raw evidence and canonical failure records are not included in this repository.
 
-## Not included
+## Assurance boundaries
 
-No product roadmap ingestion, actual memory corpus, hosted disclosure, background service, embedding/model API integration, automatic skill modification, measured improvement claim or production rollout is part of this handoff. Raw local evidence and failure-store contents are not published here.
+A wording-only clarification of development examples versus the shared held-out evaluation cohort exposed a native-v2 record-schema limitation: its globally behavioral task record cannot represent a proportionate nonbehavioral documentation exception. The original change and evidence were retained; no historical preflight or review was fabricated. Completing source reviews later would not erase that historical checker gap.
+
+The PM chat used Astra Max; a separate continuing Sol 6.1 Max session owned implementation, tests and repairs. Independent doubt reviewers used fresh Sol Max sessions. Report-only instructions were not a technical read-only sandbox. The proposed cheaper team profile and conditional-final-review policy remain design notes; the installed I2E skills and fixed role contract were not changed.
+
+Authority labels are attestations, scope filters are not same-user authentication, and hashes prove byte identity rather than truth. Secret detection is heuristic. Retrieval uses exact/keyword matching and declared-topic conflicts, not semantic contradiction detection. Lesson records cannot activate policies or prove improvement by themselves.
+
+## Publication boundary
+
+The [source manifest](docs/SOURCE-MANIFEST.json) records exact file hashes and the original candidate identity. These 17 files are copied unchanged. This status file and other handoff notes are separate publication documents, not part of the original reviewed candidate. The source's local ancestor-instruction snapshot and Git history are excluded.
+
+Runtime databases, canonical cases, raw task receipts, session transcripts and credentials stay local. No product pack was seeded, skill globally installed, service activated, automatic optimizer run, or measured token/cost/quality improvement claimed.

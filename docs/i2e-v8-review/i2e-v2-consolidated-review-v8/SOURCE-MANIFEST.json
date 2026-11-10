@@ -1,0 +1,78 @@
+{
+  "schema": "i2e-proposal-sources/v1",
+  "proposal_revision": "v8",
+  "source_commit": "bc6e28f267aa9847bb38e13fef63d76421a5134a",
+  "owner_direction": {
+    "date": "2026-11-10",
+    "scope": "Update proposal to v8 using validated findings and corrections; preserve v7 and active skill; independent review; push to public repository.",
+    "activation_authorized": false
+  },
+  "included_review": {
+    "path": "sources/CLAUDE-REVIEW.md",
+    "sha256": "bc4592862b7affac09f3cafd6a60b29327f6c6a2d6684074e2b2ce1431f7fa1a"
+  },
+  "frozen_public_sources": [
+    {
+      "kind": "frozen_v7_source",
+      "path": "../../i2e-v7-review/i2e-v2-consolidated-review-v7/PROPOSAL.md",
+      "sha256": "2b24a93746ef0f5c83757aa446d846690d24efb3372c2ab7f7638704bf345575"
+    },
+    {
+      "kind": "frozen_v7_source",
+      "path": "../../i2e-v7-review/i2e-v2-consolidated-review-v7/SKILL-DRAFT.md",
+      "sha256": "f1a43736a9a2ec3ef1dd31472dabf7a5b456435731b94c0b85a76175def37f8a"
+    },
+    {
+      "kind": "frozen_v7_source",
+      "path": "../../i2e-v7-review/i2e-v2-consolidated-review-v7/sources/severity-routing-direction.md",
+      "sha256": "37ec03237f25c3373b5ebdb61a1a33718856d4fbb912e8337c0b9a46e7b22944"
+    },
+    {
+      "kind": "frozen_v7_source",
+      "path": "../../i2e-v7-review/i2e-v2-consolidated-review-v7/sources/batching-git-direction.md",
+      "sha256": "0ad73855db4a7d55f368f2564f2d6badd77082d4c35d2dd64d1356be133ad73e"
+    },
+    {
+      "kind": "frozen_v7_source",
+      "path": "../../i2e-v7-review/i2e-v2-consolidated-review-v7/sources/empirical-verification-v1.md",
+      "sha256": "5c722c4ac4effd3b7be059d4aced424e5d33aae077f5e32521823e6dd39752fc"
+    }
+  ],
+  "private_validation_receipts": [
+    {
+      "label": "RESULT.md",
+      "sha256": "05c96d049b767a6ff3dd35e18ad62570ba96b618dc95b0195dd89f4e671545b3",
+      "availability": "owner private validation archive; not included in public source"
+    },
+    {
+      "label": "BUILD-FOLLOW-UP.md",
+      "sha256": "69031792840e6b85e6849dbfe5e14a82f8c3deb79582fed980d9f8cffa5f4f72",
+      "availability": "owner private validation archive; not included in public source"
+    },
+    {
+      "label": "evidence/runtime-results.json",
+      "sha256": "c761c1b20f3d29f30855a591dcae26bf38a8d5dcd608ca7703279b36b3c2eaf9",
+      "availability": "owner private validation archive; not included in public source"
+    },
+    {
+      "label": "evidence/git-probes.json",
+      "sha256": "8d0c7b3ce5b953d1f1933cd726df9d5b66e99db06dbbd56141c7f148ecc83fc3",
+      "availability": "owner private validation archive; not included in public source"
+    },
+    {
+      "label": "evidence/host-capability-inspection.json",
+      "sha256": "a6333d87e057d049301fe552a47de590a2b39f85601362c479dfa4a206f99ded",
+      "availability": "owner private validation archive; not included in public source"
+    },
+    {
+      "label": "evidence/github-readonly.json",
+      "sha256": "acae3641cf8a091911af20f18345ca8b15fc56b499aaae636ce0ddc256e62597",
+      "availability": "owner private validation archive; not included in public source"
+    },
+    {
+      "label": "evidence/preservation.json",
+      "sha256": "b75d79761f3bec40eb0d18f3ac8f1368b9849e2e7332259498c0adb78d337aae",
+      "availability": "owner private validation archive; not included in public source"
+    }
+  ]
+}

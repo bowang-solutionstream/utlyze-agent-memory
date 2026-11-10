@@ -1,6 +1,6 @@
 # Utlyze memory
 
-The latest I2E workflow design is available in the [v7 skill and design review packet](docs/i2e-v7-review/README.md).
+The latest proposed I2E workflow is in the [v8 skill and design review packet](docs/i2e-v8-review/README.md). The [v7 packet](docs/i2e-v7-review/README.md) remains frozen. Proposal publication does not change the installed workflow.
 
 Local product knowledge and success/failure observations for fresh sessions. The standalone core uses Python 3.11+ and its bundled SQLite. Canonical-case operations additionally require the existing installed I2E `shared_cases.py` helper, its initialized local store, Git/POSIX prerequisites and the documented local paths; that helper is not bundled or installed here. This release uses no LLM, embedding, provider, network service or background process.
 

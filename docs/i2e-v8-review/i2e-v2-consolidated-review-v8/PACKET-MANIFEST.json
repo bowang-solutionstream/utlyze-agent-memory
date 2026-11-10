@@ -1,0 +1,63 @@
+{
+  "schema": "i2e-proposal-manifest/v1",
+  "revision": "v8",
+  "scope": "DESIGN_ONLY",
+  "files": {
+    "CHANGE-RECORD.md": {
+      "sha256": "4b2ad09bd3090c1ed1cf2ace3ab79e002a8c9e947314bc25e28b3cdc20416253",
+      "bytes": 7028
+    },
+    "PROPOSAL.md": {
+      "sha256": "8f8560222ac8161c336d83e6f9a0ba890a468f3c91022f8b6354710181103a65",
+      "bytes": 7061
+    },
+    "SKILL-DRAFT.md": {
+      "sha256": "b707ad36c4b1484b12ad9ea25a96f0079b6d9ef1398ec0d9c8e42b149b4bcdc0",
+      "bytes": 4601
+    },
+    "SOURCE-MANIFEST.json": {
+      "sha256": "60bcf096c99b5aabeeec2135a43252d1b2a772c312bca0de148492af5fa46cf7",
+      "bytes": 3325
+    },
+    "prompts/implementation.md": {
+      "sha256": "6ead86b6609f9e42f527ca543e50eec798d8db931ec866c733bfefdb86132d83",
+      "bytes": 2272
+    },
+    "prompts/plan-review.md": {
+      "sha256": "f476f4f25ad417590470d71266c8b9fa01710f44911d0b13802fbc211beb94da",
+      "bytes": 2223
+    },
+    "prompts/verification.md": {
+      "sha256": "d41b996f311be81affd4f0ab3794860d10fd36e30519fa2f33948b1109f3a99e",
+      "bytes": 2580
+    },
+    "references/adoption.md": {
+      "sha256": "bcc00855288ee6bf20dde63683756c28c9a9894a380d8bc28e0d1ec4748ac33d",
+      "bytes": 5860
+    },
+    "references/delivery.md": {
+      "sha256": "663c38a61266fe22094fa897645bd4db312b5cec196e42c1ac852cdef5127c5e",
+      "bytes": 5773
+    },
+    "references/execution.md": {
+      "sha256": "354df642a7c87e441ef0c4926c49076849fb6aa004023137a4bb48b8945c4ca8",
+      "bytes": 6928
+    },
+    "references/policy.md": {
+      "sha256": "dc7695d3f0639e5b6c2d3f9a3d250945bf42c4ede04acb39c701656679ccbfbc",
+      "bytes": 7118
+    },
+    "references/verification.md": {
+      "sha256": "eaef330be5f7f8c27ae31ea09dada0eaca3c9bf0b20df45db32be136b61494f2",
+      "bytes": 6127
+    },
+    "sources/CLAUDE-REVIEW.md": {
+      "sha256": "bc4592862b7affac09f3cafd6a60b29327f6c6a2d6684074e2b2ce1431f7fa1a",
+      "bytes": 31704
+    },
+    "sources/VALIDATION-SUMMARY.md": {
+      "sha256": "8301c425d04eecf9ddd4b0c5af8d16ce0ee1418bc49340a910d3322aa6c8b3e9",
+      "bytes": 3985
+    }
+  }
+}

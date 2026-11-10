@@ -1,0 +1,12 @@
+{
+  "candidate_manifest_verified": true,
+  "review_hash_binding_verified": true,
+  "local_links_checked": 47,
+  "v7_publication_unchanged": true,
+  "protected_files_unchanged": 123,
+  "credential_pattern_hits": 0,
+  "private_paths_in_new_publication": 0,
+  "runtime_tests": "not rerun for documentation publication",
+  "review_verdict": "APPROVE_FOR_IMPLEMENTATION",
+  "review_scope": "DESIGN_ONLY"
+}

@@ -6,7 +6,7 @@ Read the [proposal](i2e-v2-consolidated-review-v8/PROPOSAL.md), [601-word coordi
 
 The packet includes actual draft role prompts and references. It proposes Direct, Standard, and Critical lanes; bounded scope expansion; Git-based handoff; protected delivery; first-failure evidence; and safe cleanup.
 
-Independent review: **PENDING**. The review result will be stored outside the candidate under `review/`.
+Independent review: **APPROVE_FOR_IMPLEMENTATION — DESIGN_ONLY**, with no material findings or blockers. Read the [full review](review/INDEPENDENT-REVIEW-1.md), [bound result](review/REVIEW-RESULT.json), and [status](review/STATUS.md).
 
 The [v7 packet](../i2e-v7-review/README.md) remains unchanged. The active skill and runtime are unchanged. Prompt forward exercises, v8 runtime implementation, installation, effective-tier qualification, and trials remain NOT_RUN / UNVERIFIED.
 

@@ -1,0 +1,127 @@
+{
+  "packet": "i2e-v2-consolidated-review/v7",
+  "status": "DESIGN_REVIEW_ONLY",
+  "created_at_utc": "2026-11-04T18:46:30.539426+00:00",
+  "files": {
+    "CHECKS.json": {
+      "bytes": 1431,
+      "sha256": "f4465d2809f5a579048ad0d1c0b89c3b3bce37937e2fcf68e19c573dac4f944f"
+    },
+    "PROPOSAL.md": {
+      "bytes": 81186,
+      "sha256": "2b24a93746ef0f5c83757aa446d846690d24efb3372c2ab7f7638704bf345575"
+    },
+    "README.md": {
+      "bytes": 2024,
+      "sha256": "217d32e8d59b369a6605a8feb7d1d5a7dfebf8f8afdcf15bc24c6ebd92247d64"
+    },
+    "REVIEW-PROMPT.md": {
+      "bytes": 2650,
+      "sha256": "dfd928b511d390260d645e934bf449cdd48faa667be5030d830940e99cb71938"
+    },
+    "REVIEW-RESPONSE.md": {
+      "bytes": 2663,
+      "sha256": "d2ab889a8cd3df355a1e713399cbc3246ebada8bc2a13094a76b9cb2221b43f7"
+    },
+    "SKILL-DRAFT.md": {
+      "bytes": 19006,
+      "sha256": "f1a43736a9a2ec3ef1dd31472dabf7a5b456435731b94c0b85a76175def37f8a"
+    },
+    "SOURCE-MANIFEST.json": {
+      "bytes": 9229,
+      "sha256": "ce6275fdfb40614a0d1527029904850802530363c1dff3176246b022ee219d86"
+    },
+    "diagrams/blueprint-reference.png": {
+      "bytes": 452655,
+      "sha256": "4cd6720beb32cde9e67e49189bd09c29ec45314968e5bf3bfa796a115a5e0342"
+    },
+    "diagrams/evidence-reference.png": {
+      "bytes": 269376,
+      "sha256": "302e352e3890b63bbe3d075ec5cceee10f8370624a7710423743449bda1039c9"
+    },
+    "sources/baseline-SKILL.md": {
+      "bytes": 8582,
+      "sha256": "fbe9f9a09385b906beeb7fa067f8365260fd4c1c7f3e4b163e6b4d7f0ac5a7ff"
+    },
+    "sources/baseline-runtime.md": {
+      "bytes": 26727,
+      "sha256": "863435393fd46ec877b233227d6447186d1d744119eee67b5daa4a09ed783886"
+    },
+    "sources/baseline-snapshot-manifest.json": {
+      "bytes": 1150,
+      "sha256": "961cb91078873625276b2ee86617ebce1bd343a8e48baf09bfbf2b054444ca39"
+    },
+    "sources/baseline-teaching.md": {
+      "bytes": 1738,
+      "sha256": "c9ba323d438bb97054565e79e7153f3360e8893c7d05e994f192f31b417f8afb"
+    },
+    "sources/batch-verification-addendum-v1.md": {
+      "bytes": 9329,
+      "sha256": "7f08a3fa9b59e7f57857c559de6c59702eda774793900bf967e0dd47a14bc7b8"
+    },
+    "sources/batching-git-direction.md": {
+      "bytes": 1080,
+      "sha256": "0ad73855db4a7d55f368f2564f2d6badd77082d4c35d2dd64d1356be133ad73e"
+    },
+    "sources/empirical-verification-v1.md": {
+      "bytes": 6814,
+      "sha256": "5c722c4ac4effd3b7be059d4aced424e5d33aae077f5e32521823e6dd39752fc"
+    },
+    "sources/github-workflow-references.md": {
+      "bytes": 1169,
+      "sha256": "5230e11c517c719970bd9b97ff911b75229750ec98739f36e158cf41bbb1a076"
+    },
+    "sources/graph-empirical-review-policy-v1.md": {
+      "bytes": 9976,
+      "sha256": "86b21de738692576cd8bbe364f31b4f6045d79af0372c1eddb176e5f9c982fb0"
+    },
+    "sources/graph-engineering-design-v2.md": {
+      "bytes": 16002,
+      "sha256": "f7972f00eca393edc33cf1035abd733b3e72bfaa65ee8f5b50fe4184dc4ce3e7"
+    },
+    "sources/independent-review-v1.md": {
+      "bytes": 10256,
+      "sha256": "897411ee9a5526a0d1f52db5f9663122d95d1b8db0aeb951a5b60146b8d26abc"
+    },
+    "sources/independent-review-v2.md": {
+      "bytes": 8428,
+      "sha256": "fcc53a4b69cf0cf3f462f3ec8fa2c37b5d03c93fde2c2bbceebda4aa6d5bb606"
+    },
+    "sources/independent-review-v3.md": {
+      "bytes": 3939,
+      "sha256": "85732650b92be8390fc4a290f3f074c889b1ecd0603dada1f1c2ce3b364db735"
+    },
+    "sources/independent-review-v4.md": {
+      "bytes": 3516,
+      "sha256": "371124cf8a8918e994e291fbd9db879f97fab92f1d1d29f52a5d687b15735f99"
+    },
+    "sources/independent-review-v5.md": {
+      "bytes": 6202,
+      "sha256": "f41f949cbe3f965bb2ae506dd2757fc47fb1c17eab931edafbd91dba421b8ca6"
+    },
+    "sources/independent-review-v6.md": {
+      "bytes": 5767,
+      "sha256": "1b71f1ba4507cb9da4fe7116419721540095cb690599bb9333368657a0a26e27"
+    },
+    "sources/maintainability-direction.md": {
+      "bytes": 458,
+      "sha256": "7e986c2f6e86e03fea8e14b258032fcd20e0e7fb047218b59ceaf92f68ab3bab"
+    },
+    "sources/review-and-repair-direction.md": {
+      "bytes": 332,
+      "sha256": "c817d28e892bad7d7a73132d933eeb168d8a207035c70f0e34a090ffb17fdee8"
+    },
+    "sources/revision-direction.md": {
+      "bytes": 657,
+      "sha256": "961560f03f143343f149db25b5140cb5e4ccfabd4d343946af3cff83bf7acb53"
+    },
+    "sources/severity-routing-direction.md": {
+      "bytes": 2147,
+      "sha256": "37ec03237f25c3373b5ebdb61a1a33718856d4fbb912e8337c0b9a46e7b22944"
+    },
+    "sources/user-direction-excerpts.md": {
+      "bytes": 3651,
+      "sha256": "c5d0d44d4d198237c40f8c31aeabf91862f44e4d73317da08593c3c3dcdb9515"
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # Utlyze memory
 
+The latest I2E workflow design is available in the [v7 skill and design review packet](docs/i2e-v7-review/README.md).
+
 Local product knowledge and success/failure observations for fresh sessions. The standalone core uses Python 3.11+ and its bundled SQLite. Canonical-case operations additionally require the existing installed I2E `shared_cases.py` helper, its initialized local store, Git/POSIX prerequisites and the documented local paths; that helper is not bundled or installed here. This release uses no LLM, embedding, provider, network service or background process.
 
 Product knowledge and learning are separate: immutable objective/feature/decision/task revisions explain why work exists; append-only episodes link attempts, candidates and checks to observations. Lessons and comparison records remain inert proposals. Recorded authority is an attested source claim. Hash identity and passing checks do not establish human approval, verified product success or measured improvement.

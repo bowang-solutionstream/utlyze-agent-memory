@@ -1,0 +1,16 @@
+{
+  "source_commit": "a8374b7b299000ac27eed167e78e159b0c84ddd4",
+  "snapshot_files": {
+    "skills/i2e-team/SKILL.md": "fbe9f9a09385b906beeb7fa067f8365260fd4c1c7f3e4b163e6b4d7f0ac5a7ff",
+    "skills/i2e-team/references/runtime.md": "863435393fd46ec877b233227d6447186d1d744119eee67b5daa4a09ed783886",
+    "skills/i2e-team/references/settings.md": "b69ae260063a307348e6da98ef83839b4e5379416b8502ae4ee4db37012f3b59",
+    "skills/i2e-team/references/teaching.md": "c9ba323d438bb97054565e79e7153f3360e8893c7d05e994f192f31b417f8afb",
+    "skills/i2e-team/scripts/i2e.py": "289e09912b0c4c9fc29796f9fb1f4160e5d5a13c986cab91af67e065fb8e0972",
+    "skills/i2e-team/agents/openai.yaml": "632578049c4c147a4e950906c1b9a07c251f2fd590a17c0e5fe9c08910f3c334",
+    "tests/test_i2e_team.py": "a1bcf5a9aa9b76acbfce7c63abf75257927f0c4cde106e5de3b8a3a765bc6e2d"
+  },
+  "snapshot_runtime_matches_tested": true,
+  "installed_still_tested_version": true,
+  "working_tree_status_after_tests": " M skills/i2e-team/SKILL.md\n M skills/i2e-team/references/runtime.md\n M skills/i2e-team/scripts/i2e.py\n M tests/test_i2e_team.py\n",
+  "working_draft_not_in_test_result": true
+}

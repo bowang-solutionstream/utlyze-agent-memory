@@ -1,0 +1,321 @@
+--- v6/PROPOSAL.md
++++ v7/PROPOSAL.md
+@@ -1,10 +1,10 @@
+ # I2E v2: project fleet, empirical verification and bounded batches
+ 
+-Version: consolidated review proposal v6 · 2026-11-04. Proposed runtime profile remains i2e-team/v2.
++Version: consolidated review proposal v7 · 2026-11-04. Proposed runtime profile remains i2e-team/v2.
+ 
+ Status: **DESIGN_REVIEW_ONLY — NOT INSTALLED — PERFORMANCE UNVERIFIED**.
+ 
+-Proposed future profile: `i2e-team/v2`. This is a review target, not a claim that such a runtime/profile exists. The v5 design received APPROVE_FOR_IMPLEMENTATION with no must-fix findings. This v6 revision addresses advisory I2E-V5-01 by making retirement without a replacement explicit when the original risk no longer applies. The maintainability loop (§11.1) continues to use existing records and independent reviews. Mandatory maximum-five-ticket batches, Git/GitHub traceability and preserved safeguards remain. Prior approvals do not approve these changed bytes. Earlier packets/reviews remain preserved; see [review response](REVIEW-RESPONSE.md). This revision does not activate any policy.
++Proposed future profile: `i2e-team/v2`. This is a review target, not a claim that such a runtime/profile exists. V6 received independent design approval with no remaining findings. User direction U06 introduces three finding severities and task priorities, High-triggered Astra ownership, Sol-led Medium work and deferred Low observations. Severity and priority remain separate fields. The maintainability loop (§11.1), maximum-five-ticket batches, Git/GitHub traceability and preserved safeguards remain. V7 requires its own independent verdict; prior approvals do not approve these changed bytes. Earlier packets/reviews remain preserved; see [review response](REVIEW-RESPONSE.md). This revision does not activate any policy.
+ 
+ ## 1. Objective and scope
+ 
+@@ -17,6 +17,8 @@
+ 1. Improve verification quality through executed acceptance checks, targeted negative controls and precise source-supported findings.
+ 2. Reduce routine audit sessions only for work that qualifies under a separately selected policy.
+ 3. Share planning/context/check/review setup across a small coherent batch while retaining per-task acceptance evidence.
++
++V7 also proposes filtering incidental Low findings out of routine review output and automatic repair/re-review cycles, with compact deferred observations for later reconsideration (§6). Evaluate this effect separately from reviewer-count, routing and batching changes; no cost reduction is established by changing labels.
+ 
+ Daily latency, reliability and token savings remain unmeasured. The earlier PNG/HTML checks established diagram quality only. This packet is not an implementation request, an installed policy, an exception to current project gates or release authority.
+ 
+@@ -59,16 +61,24 @@
+ 
+ Luna is excluded. These are desired invocation settings, not verified access or invocation evidence. The dispatcher must record requested settings separately from effective model, reasoning effort, service tier and session/context provenance. Effective settings require host/adapter evidence tied to the actual invocation; prompt labels and model self-reports are insufficient. Capability validation must establish which fields the adapter can attest and which remain unknown. A role prompt cannot change the running model. If a host cannot express the tier split, use a supported separately configured session adapter or hold the affected dispatch; never silently substitute settings.
+ 
+-The user's candidate routing matrix is retained for review:
+-
+-| Initial task classification | Manager | Planning-only tech lead | Implementation |
++### Three-level classification and ownership
++
++Use **High / Medium / Low** for finding severity (§6) and, separately, task priority. Severity describes the impact of a defect; priority describes the business urgency of authorized work. Record technical risk and difficulty separately. Critical remains a technical-risk/escalation trigger, not a fourth finding severity. No findings is NOT_APPLICABLE, not an invented Low finding; a genuinely unknown required classification remains UNKNOWN.
++
++Apply the first matching row. High priority **or** a High finding affecting the work is sufficient for Astra ownership; they need not both be High.
++
++| Task or finding condition | Manager | Planning-only tech lead | Implementation / disposition |
+ |---|---|---|---|
+-| P0 or Critical technical risk | Astra | Astra | Separate Astra worker owns implementation; Sol may take approved bounded parts |
+-| P1 | Sol | Sol; Astra for difficult architecture | Sol |
+-| P2 | Sol | Sol | Terra |
+-| P3 | Sol | Sol with a proportionate plan | Terra |
+-
+-Priority, difficulty and technical risk remain separate fields. Critical risk overrides priority. The initial proposed policy retains this priority/risk matrix and records difficulty without automatic difficulty overrides (O1). Difficult architecture still triggers the required Astra challenge; a model/ownership change outside the matrix needs an explicitly approved policy/plan revision. Unknown required classification blocks dispatch. Do not down-route mandatory Astra work or equate low priority with easy work. P0 author routing and Astra final-review triggers are separate decisions. Adoption of this v2 matrix remains separate from preserving the current installed route during baseline runtime groundwork.
++| High task priority, High finding severity, or Critical technical risk | Astra | Astra | Separate Astra worker owns implementation; Sol may take explicitly approved bounded parts |
++| Medium priority or Medium finding; no High/Critical trigger | Sol | Sol; Astra challenge for difficult architecture | Separate Sol worker by default; Terra for explicitly planned bounded routine edits |
++| Explicitly requested Low-priority work; no higher finding/risk trigger | Sol | Sol with a proportionate plan | Terra for bounded routine edits; Sol otherwise; fulfill the authorized request |
++| Incidental Low finding only | No new assignment | No new plan | Record DEFERRED_LOW in existing observations; no automatic ticket, repair or re-review |
++
++Medium preserves the earlier Sol-led plan and Terra role for bounded routine implementation. The exact plan records that choice; uncertainty is not permission to down-route. Low finding suppression never cancels user-requested work. A Low-priority task with a High finding follows the High row. Difficult architecture, repeated-repair escalation and existing mandatory Astra obligations remain in force; difficulty alone does not introduce another automatic router (O1).
++
++Classify before dispatch and reassess when evidence or scope changes. Credible possible material harm needs enough investigation to classify; uncertainty is not Low. Unknown required classification holds dependent dispatch while permitted read-only diagnosis can continue. A changed route requires a current exact-plan revision and approval; it cannot authorize earlier edits or waive prior obligations. Legacy numeric labels remain in historical records: classify new work from intent and evidence, without rewriting old receipts or inferring finding severity from task priority.
++
++These rows select coordination and implementation ownership. They do not replace the independent Sol assurance/recheck roles or determine the seven Astra final-review triggers. Finding severity, task priority and technical-risk eligibility must not be interchanged to obtain reduced assurance. Adoption remains separate from preserving the installed route during baseline runtime groundwork.
+ 
+ ## 4. Preserved requirements
+ 
+@@ -137,7 +147,7 @@
+ 
+ Critical work and any mandatory baseline policy retain three mutually distinct independent Sol code/security/test audits. They become more empirical, with current shared suite receipts and targeted independent checks; they are not replaced by a fourth generic verifier plus three audits.
+ 
+-The initial proposed policy uses the baseline three-audit route for Medium/High non-critical work and for unknown reduced-route eligibility. Defer a verifier-plus-selected-specialists intermediate route until evidence supports explicit eligibility rules and the owner selects it (O2). The dispatcher cannot improvise that route. No fourth generic verifier is added to the three baseline audits.
++The initial proposed policy uses the baseline three-audit route for Medium/High non-critical technical risk and for unknown reduced-route eligibility. These risk levels are separate from finding severity and task priority. Defer a verifier-plus-selected-specialists intermediate route until evidence supports explicit eligibility rules and the owner selects it (O2). The dispatcher cannot improvise that route. No fourth generic verifier is added to the three baseline audits.
+ 
+ ### Triggered obligations
+ 
+@@ -155,7 +165,19 @@
+ 
+ ### Findings and repair rechecks
+ 
+-Blocking findings need an affected requirement or material risk, concrete evidence and impact. Accept executed reproductions, deterministic checks, precise source arguments and relevant formal counterexamples. Unsafe live exploitation is not required. Unsupported preferences are advisory. Implementers explain supported disagreements instead of accepting every suggestion automatically.
++Routine review output reports only **High and Medium** findings. Each needs a stable ID, affected requirement/risk, concrete evidence, consequence, smallest sufficient correction and validation. Accept executed reproductions, deterministic checks, precise source arguments and relevant formal counterexamples; unsafe live exploitation is not required. Implementers explain supported disagreements instead of accepting every suggestion automatically. No-findings is a valid result.
++
++| Finding severity | Impact test | Treatment |
++|---|---|---|
++| High | Serious harm to business logic, an essential workflow, security, data integrity or reliability | Report; Astra ownership under §3; resolve before delivery through the existing disposition/authority rules; preserve emergency escalation |
++| Medium | A concrete defect or maintenance problem with material, bounded impact | Report with evidence and the smallest sufficient correction; Sol-led handling under §3 and the existing disposition/recheck rules |
++| Low | Optional polish, preference or minor issue with no demonstrated material impact | Omit from routine findings; compact DEFERRED_LOW observation; no automatic work or additional review cycle |
++
++Classify impact before filtering. An apparent nit that can materially break an important workflow is Medium or High when evidence supports that consequence; do not wait for a production incident. Credible but uncertain material risk stays an explicit unresolved classification/assurance gap until assessed, not a suppressed Low. Do not inflate preference-only advice to Medium to bypass the filter.
++
++For each encountered Low finding, use a compact, deduplicated entry in existing observation/decision artifacts: stable ID or deduplication key, source/candidate location, short reason for Low and a concrete revisit trigger. Mark it DEFERRED_LOW, not FIXED or risk-accepted. Link repeated instances to the same pattern. No separate backlog/store, ticket, owner/due-date chase, capture quota, Low-only review or scheduled sweep is introduced. Routine reports may link the observation record without listing its Low entries. Revisit on relevant new evidence, repeated aggregate burden, changed requirements or an explicit user request. If impact becomes material, append a linked reclassification, preserve the old evidence, and apply current routing, planning and assurance before repair; defer optional cleanup unless authorized.
++
++This filter applies to incidental review advice. It cannot hide a required acceptance failure, security obligation, real failure capture, unfinished user request or previously recorded actionable finding. Those retain their required evidence and supported dispositions; changing the label alone cannot close them. An eligible DEFERRED_LOW observation does not block acceptance or require a FIXED-finding recheck. Failed checks remain failures even when a reviewer suggests Low.
+ 
+ The frozen runtime requires a FIXED actionable finding to have current passing recheck proof and an independent Sol recheck reviewer distinct from contributors **and the original finding reviewer**. Preserve this default. The primary verifier may retain context and renew the batch verdict, but that alone does not satisfy the distinct finding-recheck obligation. Clean passes can use one verifier; findings can introduce additional review. Several findings may share one recheck session only if that session independently satisfies every finding’s identity and scope requirements. Measure incremental detection and delay before proposing relaxation (O3); no saving from removing this rule is assumed.
+ 
+@@ -341,7 +363,7 @@
+ 
+ Consolidation must preserve every still-applicable requirement and exception. Retirement needs evidence that the original risk no longer applies or is covered by an identified replacement control, with affected regression and legitimate-use checks. Preserve the old wording, rationale, evidence and supersession/retirement decision in history; after authorized adoption, active guidance omits retired rules and points to a replacement only where one exists; retrieval labels old rules as historical. Retirement does not erase failures or unresolved obligations, waive current gates, or silently change an in-flight run's profile. Instruction/profile changes retain the existing evidence-invalidation rules.
+ 
+-Existing independent plan and implementation reviewers challenge the proposed cause, smallest alternative and counterexamples, including valid repair paths. They apply §6's evidence/impact standard to blockers; unsupported preferences remain advisory and no-findings is a valid result. Pending lesson evaluation alone does not block the original task's acceptance; material findings remain governed by §6. Reviewer counts, independence, finding rechecks, specialists and final-review triggers remain unchanged. Owner-mandated rules and assurance requirements retain their existing explicit change authority. Revisit guidance when new evidence or changed applicability warrants it; age or lack of recent failures alone is not retirement evidence.
++Existing independent plan and implementation reviewers challenge the proposed cause, smallest alternative and counterexamples, including valid repair paths. Apply §6's severity/impact standard: report High/Medium findings; retain useful Low observations compactly without automatic implementation, rule creation or re-review. No-findings is a valid result. Pending lesson evaluation alone does not block the original task's acceptance; material findings remain governed by §6. Required reviewer counts, independence, actionable-finding rechecks, specialists and final-review triggers remain unchanged. Owner-mandated rules and assurance requirements retain their existing explicit change authority. Revisit guidance when new evidence or changed applicability warrants it; age or lack of recent failures alone is not retirement evidence.
+ 
+ ## 12. Implementation and evaluation sequence
+ 
+@@ -350,7 +372,8 @@
+ 3. **Evaluation preregistration and empirical-method evaluation:** before trials, obtain owner-selected thresholds for unacceptable misses by severity, tolerated unsupported blockers, latency and interventions; specify representative workload, sample/stopping rules and adjudication. Without this, exploratory feasibility runs must be labeled exploratory and cannot justify adoption. Compare current versus strengthened verification with reviewer counts/model routing held fixed. Use concealed seeded faults plus adjudicated real defects. Freeze each arm’s verdict before sharing findings or repairing the candidate to prevent leakage.
+ 4. **Reviewer-count evaluation:** on representative eligible tasks, compare the one-verifier route to the baseline with baseline audits in shadow. Hold batching and other variables stable; shadow results are evaluation evidence, not a shortcut to old-profile compliance.
+ 5. **Batch evaluation:** compare historical/controlled unbatched work with the mandatory at-most-five-ticket route under the same assurance policy/routing. The comparison is an isolated experiment, not a hidden optional route in adopted production policy. Include sizes below/at the cap, an oversized request, cross-task faults, issue/commit/PR mappings and task removal/repair. Measure waiting time as part of elapsed time.
+-6. **Owner-selected adoption:** judge the predeclared thresholds without changing them after seeing results, select the policy/version explicitly, and activate only validated capabilities. Retain a route back to the baseline for new work; preserve historical records.
++6. **Finding-filter and routing evaluation:** assess Low suppression and the new ownership matrix separately, holding other variables fixed. Measure missed/misclassified High/Medium defects, suppressed acceptance failures, avoided repair/re-review effort, deferred-record overhead and successful later reclassification. Use the same predeclared impact definitions for both arms; renaming or suppressing a defect cannot improve a metric. These are proposed evaluations, not new per-task review stages.
++7. **Owner-selected adoption:** judge the predeclared thresholds without changing them after seeing results, select the policy/version explicitly, and activate only validated capabilities. Retain a route back to the baseline for new work; preserve historical records.
+ 
+ Metrics: caught/missed defects by severity; unsupported blockers; avoidable rework; reviewer effort; model usage per accepted task; elapsed time including batch waiting; user interventions; recovery failures; verification infrastructure upkeep. Include failed attempts and repairs in total effort; report shadow-review costs separately from the proposed steady-state route. Comparative arms must have equivalent candidate/acceptance scope, independent judgment, frozen verdicts and a recorded adjudication of disagreements. Unknown usage stays unknown. One successful pilot establishes feasibility only; representative repeated work is needed to assess daily utility.
+ 
+@@ -360,6 +383,12 @@
+ 
+ | Probe | Expected behavior |
+ |---|---|
++| High priority with no finding, or Low priority with a High finding | Either condition independently selects separate Astra manager/lead/implementation ownership; required Sol assurance remains independent |
++| Medium work with a bounded routine edit versus substantive implementation | Sol manager/lead; exact plan assigns Terra to the bounded routine edit or a separate Sol worker otherwise |
++| Incidental Low polish versus an explicitly requested Low-priority change | Polish becomes a compact DEFERRED_LOW observation with no ticket/repair/re-review; requested work remains in scope and follows §3 |
++| Deferred Low pattern gains evidence of material workflow impact or repeated aggregate cost | Append supported Medium/High reclassification and refresh the plan/route/obligations before repair; original evidence remains |
++| Low label attached to a required failing check, old actionable finding or credible unresolved material risk | No suppression or false closure; retain the failure/obligation or resolve classification through existing gates |
++| Reviewer promotes preference-only advice to Medium, or repeats every Low entry in the report | Require concrete material impact; otherwise retain only a useful deduplicated observation, with no automatic additional cycle |
+ | Plan changes after approval; old approval offered | Dependent start rejected until current exact approval |
+ | Lead creates three compatible tickets | One declared batch and one combined independent assurance unit; per-ticket proof retained |
+ | Six scoped changes in one candidate, or eight tickets in one request | Oversized candidate rejected; request partitioned into approved batches of at most five |
+@@ -403,7 +432,7 @@
+ | ID | Consolidated treatment | Source / status |
+ |---|---|---|
+ | D01 | One manager, planning-only lead, separate workers | User fleet direction; S03 proposal |
+-| D02 | Astra/Sol/Terra matrix and speed settings; Luna excluded; no automatic difficulty override initially | User candidate matrix; S02/S03; R01 O1/O7 recommendations |
++| D02 | High priority/severity or Critical risk selects Astra ownership; Medium remains Sol-led with planned Terra routine work; speed settings unchanged, Luna excluded | U06 supersedes numeric dispatch tiers; historical matrix remains in S02/S03; O1/O7 |
+ | D03 | One empirical verifier for fully eligible Low-risk work | S02 proposed policy change; no installed waiver |
+ | D04 | Full RED harness and targeted fault controls; credible static concerns retained | S01 frozen verification reference |
+ | D05 | Formal methods selective with model-to-code evidence and proof limits | S01; no tools executed |
+@@ -417,16 +446,17 @@
+ | D13 | Initial policy positions, lean reducer/adapter, preserved obligations and preregistered comparisons | R01 O1–O10 and R02 v2 approval; preserved except U03 batch clarification |
+ | D14 | Per-project GitHub Issues/PRs; ticket-linked commit/diff trace; one batch PR to main; retained squash/merge provenance | U03 Git workflow direction; §8.2 design contract; no remote provisioning |
+ | D15 | Capture maintainability observations; evaluate scoped lessons and consolidate/retire rules through existing records, independent review and authority | U04 direction; §11.1 proposal; no new store/stage and no automatic promotion or gate relaxation |
+-| D16 | Retirement may remove obsolete guidance without creating a successor; retain evidence and current protections | R05 I2E-V5-01 advisory and U05 direction; narrow clarification awaiting independent recheck |
++| D16 | Retirement may remove obsolete guidance without creating a successor; retain evidence and current protections | R05 I2E-V5-01 and U05 direction; independently closed at design level by R06 |
++| D17 | High/Medium/Low severity and separate priority; report only material High/Medium findings; compact deferred Low observations with evidence-based promotion | U06 owner direction; §3/§6 proposal only; no automatic Low tickets, repair cycles or erasure of existing obligations |
+ 
+ ## 15. Initial design positions and deferred owner decisions
+ 
+-These positions incorporate R01/R02, the U03 batching direction and U04 maintainability direction; they are not active policy. The fresh reviewer must challenge their adequacy rather than assume agreement. The user authorized proposal revision and independent review, not activation.
++These positions incorporate R01–R06, the U03 batching direction, U04 maintainability direction and U06 severity/routing direction; they are not active policy. The fresh reviewer must challenge their adequacy rather than assume agreement. The current request authorizes proposal revision, not activation. V7's independent verdict remains pending.
+ 
+ | ID | Initial proposed contract | Deferred decision / evidence needed |
+ |---|---|---|
+-| O1 | Retain priority/risk matrix, record difficulty separately, no automatic difficulty overrides; mandatory Astra remains a floor | Any future difficulty router needs explicit owner selection/escalation rules; baseline runtime groundwork does not wait for it |
+-| O2 | Medium/High or unknown reduced-route eligibility uses three distinct baseline audits; no fourth generic verifier | Defer intermediate verifier-plus-specialists route until eligibility evidence and owner selection |
++| O1 | Separate High/Medium/Low severity and priority; either High or Critical risk selects Astra ownership; Medium uses Sol with planned Terra routine work; no automatic difficulty override | Validate dispatch and reclassification before adoption; future difficulty routing still needs explicit owner selection; installed routing stays unchanged |
++| O2 | Medium/High technical risk or unknown reduced-route eligibility uses three distinct baseline audits; no fourth generic verifier | Defer intermediate verifier-plus-specialists route until eligibility evidence and owner selection; Low severity/priority is not reduced-route eligibility |
+ | O3 | Preserve distinct FIXED-finding rechecker; one eligible session may recheck multiple findings | Measure incremental detection/delay before requesting relaxation |
+ | O4 | Preserve exact-plan approval for tiny tasks; proportionate plans and mandatory batching of decomposed work | A micro-task exemption needs explicit owner selection; none introduced |
+ | O5 | Decomposed requests must be partitioned into batches of at most five bounded tickets; every changed contract gets renewed approval; preserve history, continuation, dependencies/interactions/rollback and Git/PR mappings | Future streamlined removal policy would need evidence and explicit selection; partial acceptance is not original-request completion |
+@@ -434,7 +464,7 @@
+ | O7 | Separate requested/effective invocation settings and host-attested session/context provenance; unsupported or unknown settings HOLD dispatch | Live capability probes must establish actual model/effort/tier and isolation; no prompt/self-report substitute |
+ | O8 | Existing ledger + one reducer/policy evaluator + immutable evidence + per-task attempts/dependencies + dispatch/action adapter | Validate §9.1/§9.2 capabilities; no second coordinator/general graph framework/always-on fleet |
+ | O9 | Prioritize ownership/replacement, stale approval and ambiguous publication recovery; preserve bounds/fairness/progress/model-code limits | Select exact formal models during implementation planning; trace agreement alone is partial evidence |
+-| O10 | Freeze evaluation thresholds and workload/adjudication before trials; isolate method/count/batch effects and report all effort | Owner must choose numerical severity-miss, blocker, latency/intervention limits using representative workload evidence; no values or savings fabricated |
++| O10 | Freeze evaluation thresholds and workload/adjudication before trials; isolate method/count/batch/filter/routing effects and report all effort | Owner must choose numerical severity-miss, blocker, latency/intervention limits using representative workload evidence; no values or savings fabricated |
+ 
+ Unproven adapter capabilities block the affected runtime operation; missing evaluation thresholds block adoption-grade trials, not source-based design review or separately authorized baseline groundwork. No preserved owner gate is silently relaxed. Share review preparation only when decision coverage and separate verdicts remain explicit.
+ 
+@@ -462,10 +492,12 @@
+ - R02: [Independent v2 review](sources/independent-review-v2.md), approved only for its exact v2 candidate.
+ - R03: [Independent v3 review](sources/independent-review-v3.md), identifying I2E-V3-01 local-only dependency admission.
+ - R04: [Independent v4 review](sources/independent-review-v4.md), approved only for its exact v4 candidate.
+-- R05: [Independent v5 review](sources/independent-review-v5.md), approval with advisory I2E-V5-01; no approval inherited by v6.
++- R05: [Independent v5 review](sources/independent-review-v5.md), approval with advisory I2E-V5-01.
++- R06: [Independent v6 recheck](sources/independent-review-v6.md), closing I2E-V5-01 for the exact v6 candidate; no approval inherited by v7.
+ - U03: [Latest mandatory batching and Git direction](sources/batching-git-direction.md), superseding the earlier optional heuristic.
+ - U04: [Maintainability and rule evaluation direction](sources/maintainability-direction.md), preserving adversarial review.
+ - U05: [Fresh review and repair direction](sources/review-and-repair-direction.md), with the active workflow unchanged.
++- U06: [Three-level severity, routing and deferred Low direction](sources/severity-routing-direction.md), superseding numeric dispatch tiers in this proposal while keeping severity separate from priority.
+ - [GitHub platform references](sources/github-workflow-references.md), distinct from proposed local policy.
+ - U02: [Proposal revision direction](sources/revision-direction.md).
+ - [Source manifest](SOURCE-MANIFEST.json) pins original and copied bytes.
+@@ -473,4 +505,4 @@
+ 
+ External background sources are preserved in S01/S02/S04. Published workflow patterns and testing guidance do not establish this design's safety or token savings. The Lauren Tan interpretation is based on the supplied Za summary, not independently verified X exchanges. No provider's internal engineering architecture is claimed here.
+ 
+-Evidence level: source-based design revision and packet-integrity checks only. R05 approved v5 and recorded one Low advisory clarification. This v6 change requires an independent recheck bound to its changed hashes; neither the author’s response nor the v5 verdict approves it automatically. Runtime implementation, effective routing/isolation/delivery capabilities, lesson evaluation, empirical pilot, formal checking and savings remain **NOT_RUN / UNVERIFIED**, as applicable. Design approval does not change the active workflow or grant implementation/release authority.
++Evidence level: source-based design revision and packet-integrity checks only. R06 approved the exact v6 candidate. V7 requires a fresh independent verdict bound to its changed hashes; neither the author’s response nor the v6 verdict approves it automatically. Runtime implementation, effective routing/isolation/delivery capabilities, severity/filter/reclassification execution, lesson evaluation, empirical pilot, formal checking and savings remain **NOT_RUN / UNVERIFIED**, as applicable. Design approval does not change the active workflow or grant implementation/release authority.
+--- v6/SKILL-DRAFT.md
++++ v7/SKILL-DRAFT.md
+@@ -8,7 +8,7 @@
+ 
+ # I2E v2 — proposed entrypoint
+ 
+-This is proposed future skill text for independent review. Do not activate it, dispatch its roles, mutate the live skill, or interpret it as permission to execute a workflow during this review. [PROPOSAL.md](PROPOSAL.md) is the consolidated design contract and records initial proposed positions and deferred owner decisions. The v5 review approved its exact candidate with one advisory clarification. Revision v6 explicitly allows retiring obsolete guidance without a replacement; the maintainability loop still uses existing records and independent reviews (§11.1). It requires its own independent verdict and does not activate policy.
++This is proposed future skill text for independent review. Do not activate it, dispatch its roles, mutate the live skill, or interpret it as permission to execute a workflow during this review. [PROPOSAL.md](PROPOSAL.md) is the consolidated design contract and records initial proposed positions and deferred owner decisions. V6 was independently approved at design level. V7 introduces separate High/Medium/Low severity and priority, High-triggered Astra ownership and deferred Low observations. It requires its own independent verdict and does not activate policy.
+ 
+ ## Intended use after adoption
+ 
+@@ -35,9 +35,11 @@
+ 
+ Requested settings: Astra / max / Standard; Sol and Terra / max / Fast. Luna is excluded. Record requested settings separately from host/adapter-attested effective model/effort/tier and session/context provenance. Unknown or unsupported settings hold dispatch; prompt labels and self-reports are insufficient. Unsupported routing does not become valid because the prompt names the desired model.
+ 
+-The initial proposed O1 position retains the candidate priority/risk matrix without automatic difficulty overrides: P0 or Critical routes manager/lead/implementation ownership to separate Astra roles, with approved bounded Sol work possible; P1 uses Sol with Astra architecture help where needed; P2/P3 use Sol manager/lead and Terra implementation. Record difficulty separately; difficult architecture still requires the applicable Astra challenge. Unknown required classification holds dispatch; never silently downgrade mandatory Astra ownership. Baseline runtime groundwork preserves the installed route until explicit adoption.
++Use High / Medium / Low for finding severity and, separately, task priority. Apply PROPOSAL §3: High priority **or** a High finding affecting the work **or** Critical technical risk routes manager, planning-only lead and implementation ownership to separate Astra roles; approved bounded Sol parts remain possible. With no higher trigger, Medium uses Sol manager/lead and a separate Sol worker by default, with Terra for explicitly planned bounded routine edits. Explicitly requested Low-priority work remains in scope: Sol coordinates/plans, Terra implements bounded routine edits and Sol handles the rest. Incidental Low findings receive DEFERRED_LOW observations and no automatic dispatch. Low-priority work with a High finding follows the High route.
+ 
+-Every exact task or batch plan needs fresh independent Astra approval. All seven final triggers must be explicitly assessed and reassessed. P0 author routing does not itself determine final-review requirements.
++Keep difficulty and technical risk separate. Critical is a risk/escalation trigger, not a fourth severity; difficult architecture still requires the applicable Astra challenge. Classify before filtering/dispatch and reassess on new evidence. No findings is NOT_APPLICABLE; unknown required classification holds dependent dispatch while allowed read-only diagnosis can continue. Do not classify uncertain material harm as Low. Route changes require current exact-plan approval and retain prior obligations; historical receipts are not relabeled. Baseline groundwork preserves installed routing until adoption.
++
++Every exact task or batch plan needs fresh independent Astra approval. All seven final triggers must be explicitly assessed and reassessed. Astra implementation ownership does not replace independent Sol assurance/rechecks or itself determine final-review requirements. Finding severity and priority do not establish technical-risk eligibility for reduced assurance.
+ 
+ ## Lifecycle spine
+ 
+@@ -47,7 +49,7 @@
+ 4. **Dispatch:** start only with the current approved plan, completed dependencies, compatible package ownership and confirmed invocation settings. Default to isolated per-attempt writable outputs with validated isolation from other attempts, integration destinations and immutable artifacts. Shared-worktree replacement requires confirmed full-writer quiescence/write revocation and reconciled source identity; otherwise HOLD (PROPOSAL §9.1). Preserve source/write boundaries and actual identities.
+ 5. **Implement with evidence:** inspect each real preflight before its dependent action. VERIFY has no source writes and collects applicable CHECK evidence. TEST_ONLY edits only approved test scope and preserves production bytes. Behavioral work requires meaningful assertion RED, then authorized PRODUCTION and unchanged-test GREEN. Justified nonbehavior work uses applicable proof; no behavioral waiver is assumed. Preserve focused ticket-linked commits as code/diff/recovery traces; their existence alone does not trigger a full independent audit per commit.
+ 6. **Integrate:** capture stable outputs into controlled immutable artifacts, stage privately and admit only under current fencing tokens/dependency versions using the expected ledger sequence. A token/sequence change rejects admission; stale writes cannot enter a replacement or acceptance candidate. Record output provenance and actual candidate/base/harness/configuration, then run required deterministic and cross-task checks. Integration edits invalidate affected proof (PROPOSAL §9.1).
+-7. **Verify independently:** fully eligible Low-risk work uses the proposed one-fresh-Sol route. Medium/High and ineligible/unknown routes retain baseline assurance; defer any intermediate route until evidence and owner selection support it. Required baseline code/security/test audits use three distinct eligible Sol sessions. Use targeted independent execution and source/assertion review; distinguish executed from inspected evidence.
++7. **Verify independently:** fully eligible Low-risk work uses the proposed one-fresh-Sol route. Medium/High technical risk and ineligible/unknown routes retain baseline assurance; defer any intermediate route until evidence and owner selection support it. Required baseline code/security/test audits use three distinct eligible Sol sessions. Use targeted independent execution and source/assertion review; distinguish executed from inspected evidence. Report High/Medium findings under §6 and keep incidental Low observations outside routine findings.
+ 8. **Complete obligations:** run required non-final specialists, resolve findings with current evidence, consult final canonical cases and run applicable regressions. A required fresh Astra final review follows these results and excludes prior participants. Avoid duplicate specialist sessions when one eligible audit demonstrably covers the same obligation.
+ 9. **Gate and deliver:** check current candidate/plan/profile/harness identity, reviewer eligibility, all findings, mandatory proof/approvals and exact action authority. The adapter must enforce relevant expected source/target/artifact identities at the external operation and verify the resulting identity/relation (PROPOSAL §9.2). Changed preconditions reject or require renewed validation before effect; unsupported guarantees HOLD the action. Record actual commit/PR/CI/merge/deploy results separately.
+ 10. **Report and learn:** establish technical readiness before marking completion. Return actual status and a concise factual engineering brief, record its links and finish consistency checks. Capture observed maintainability patterns and evaluated lesson dispositions through §11.1; passing tests need not hide unnecessary complexity, and an uneventful run need not invent observations. Preserve continuation work after interruption; no fabricated success, alternatives or learner assessment.
+@@ -68,7 +70,11 @@
+ 
+ Capture every real failure before repair with broken source/evidence and a stable defect linked through the existing canonical helper/schema. Consult scoped cases before each repair; preserve known digests, capture/lookup gaps and prior attempts. Two failed repairs of one defect require Astra diagnosis before another attempt. Expected RED is separate.
+ 
+-Findings require requirement/risk, evidence and impact. Precise static/security evidence may block without unsafe execution. Unsupported preferences are advisory; resolve disagreements explicitly. Preserve baseline FIXED-finding recheck independence: the required Sol recheck reviewer is distinct from contributors and the original finding reviewer. Primary verifier continuity does not waive that extra obligation. Several findings may share a recheck session only if it meets each finding’s independent eligibility rules; measure detection and delay before proposing relaxation. Human risk acceptance needs actual human evidence.
++Routine findings use only High (serious impact) or Medium (material, bounded impact), with stable ID, requirement/risk, evidence, consequence, smallest correction and validation. Apply the full impact definitions in PROPOSAL §6. Precise static/security evidence may block without unsafe execution. Classify before suppression: uncertain material risk needs investigation, and a preference cannot be inflated to Medium to evade the filter. Resolve supported disagreements explicitly; no-findings is valid.
++
++Retain encountered Low findings as compact, deduplicated DEFERRED_LOW entries in existing observation/decision artifacts: ID/key, source/candidate location, reason for Low and revisit trigger. Omit their details from routine review output. Add no backlog/store, automatic ticket, repair/re-review, owner/due-date chase, capture quota or scheduled sweep. New evidence, repeated aggregate burden, changed requirements or a user request can prompt reassessment; preserve the original entry and link any supported Medium/High reclassification before current planning/routing and repair. DEFERRED_LOW means deferred, not FIXED or risk-accepted, and needs no independent recheck solely for deferral.
++
++The Low filter cannot hide failing acceptance checks, real failure capture, security obligations, user-requested work or prior actionable findings; these keep their existing evidence/disposition requirements. Preserve baseline FIXED-finding recheck independence: the required Sol recheck reviewer is distinct from contributors and the original finding reviewer. Primary verifier continuity does not waive that extra obligation. Several findings may share a recheck session only if it meets each finding’s independent eligibility rules; measure detection and delay before proposing relaxation. Human risk acceptance needs actual human evidence.
+ 
+ A relevant source, plan, base, instruction, profile, harness, dependency or configuration change invalidates affected proof/reviews. No retrospective authorization. VERIFY cannot close an open test/production cycle. Explicit approved bounded remediation repairs only its named obligations while retaining all other prerequisites.
+ 
+@@ -76,7 +82,7 @@
+ 
+ ## Maintainability learning
+ 
+-Apply [PROPOSAL §11.1](PROPOSAL.md#111-maintainability-observations-and-rule-evaluation) within existing planning, review and reporting. Link pattern evidence/scope, the smallest proposed response, evaluation and disposition in existing observation/decision artifacts; keep the canonical failure schema unchanged. Compare motivating and held-out cases, including legitimate-use counterexamples, before adopting a reusable rule change. Pending lesson evaluation alone does not block the original task; material findings remain governed by §6. Consolidation preserves applicable requirements; retirement needs obsolete-risk or replacement-control evidence and retained history. Obsolete guidance may leave the active set without a successor. Rule changes use existing independent review and actual change authority, preserve evidence invalidation and never waive §6. No new store, audit stage, observation quota or automatic rule activation is introduced.
++Apply [PROPOSAL §11.1](PROPOSAL.md#111-maintainability-observations-and-rule-evaluation) within existing planning, review and reporting. Link pattern evidence/scope, the smallest proposed response, evaluation and disposition in existing observation/decision artifacts; keep the canonical failure schema unchanged. Low observations follow §6 without automatic implementation, rule creation or re-review. Compare motivating and held-out cases, including legitimate-use counterexamples, before adopting a reusable rule change. Pending lesson evaluation alone does not block the original task; material findings remain governed by §6. Consolidation preserves applicable requirements; retirement needs obsolete-risk or replacement-control evidence and retained history. Obsolete guidance may leave the active set without a successor. Rule changes use existing independent review and actual change authority, preserve evidence invalidation and never waive §6. No new store, audit stage, observation quota or automatic rule activation is introduced.
+ 
+ ## Assurance limits and adoption
+ 
+@@ -84,4 +90,4 @@
+ 
+ No individual-run budget or budget-approval gate. Usage is optional measured telemetry; unknown is not zero. Local consistency checks do not authenticate models, enforce OS permissions, prove task correctness or grant release authority.
+ 
+-Use the smallest runtime extension: existing ledger, one deterministic reducer/policy evaluator, immutable evidence, task attempts/dependencies and one dispatch/action adapter boundary; derive batch readiness from obligations. After independent design approval and separate implementation authorization, implement/test those contracts while preserving baseline assurance. Before adoption-grade trials, freeze owner-selected severity-miss, unsupported-blocker, latency/intervention thresholds and workload/adjudication rules. Evaluate empirical improvements, reviewer reduction and batching separately; freeze both arms’ verdicts before sharing findings/repair, use concealed seeded faults and adjudicated real defects, include failed attempts and batch waiting, and report shadow costs separately. Obtain explicit owner selection before activating v2. Do not use this draft to certify old-profile completion or change installed defaults automatically.
++Use the smallest runtime extension: existing ledger, one deterministic reducer/policy evaluator, immutable evidence, task attempts/dependencies and one dispatch/action adapter boundary; derive batch readiness from obligations. After independent design approval and separate implementation authorization, implement/test those contracts while preserving baseline assurance. Before adoption-grade trials, freeze owner-selected severity-miss, unsupported-blocker, latency/intervention thresholds and workload/adjudication rules. Evaluate empirical improvements, reviewer reduction, batching, Low filtering and routing separately; freeze both arms’ verdicts before sharing findings/repair, use concealed seeded faults and adjudicated real defects, include failed attempts, deferred-record overhead and batch waiting, and report shadow costs separately. Relabeling/suppressing defects cannot improve measured quality. Obtain explicit owner selection before activating v2. Do not use this draft to certify old-profile completion or change installed defaults automatically.
+--- v6/README.md
++++ v7/README.md
+@@ -1,11 +1,15 @@
+-# I2E v2 — proposal revision 6
++# I2E v2 — proposal revision 7
+ 
+-Packet creation checkpoint: DESIGN_REVIEW_ONLY — INDEPENDENT_RECHECK_PENDING — NOT INSTALLED. See the [current revision status](../i2e-v2-revision6-evidence/STATUS.md) for a later verdict bound to these bytes. Runtime profile name remains i2e-team/v2.
++Status: **PROPOSAL_UPDATED — INDEPENDENT_REVIEW_PENDING — NOT INSTALLED**. Runtime profile name remains i2e-team/v2. See the [revision status](../i2e-v2-revision7-evidence/STATUS.md).
+ 
+-The [v5 independent review](sources/independent-review-v5.md) approved the maintainability design with no must-fix findings and one Low advisory clarification. V6 makes retirement without a replacement explicit when the original risk no longer applies. The existing retirement probe now covers both paths. No new mechanism or routine review stage is added.
++V7 applies the user's [three-level severity and routing direction](sources/severity-routing-direction.md):
+ 
+-Read [PROPOSAL §11.1](PROPOSAL.md#111-maintainability-observations-and-rule-evaluation) and the matching [entrypoint](SKILL-DRAFT.md#maintainability-learning). Existing records capture observations, evaluate reusable lessons and support scoped adoption, consolidation, narrowing or retirement. Pending lesson evaluation alone does not block the original task. Adversarial review, maximum-five batches, Git traceability and safety boundaries remain intact.
++- High priority or High finding severity, and existing Critical technical risk, select Astra ownership.
++- Medium remains Sol-led; Terra handles explicitly planned bounded routine implementation.
++- Incidental Low findings leave routine review output and automatic ticket/repair/re-review cycles. Compact DEFERRED_LOW entries remain in existing observation records for later reconsideration.
+ 
+-The [change record](REVIEW-RESPONSE.md), [independent recheck prompt](REVIEW-PROMPT.md) and [source manifest](SOURCE-MANIFEST.json) preserve the delta and provenance. V5's approval does not approve v6. Record the new verdict outside the frozen candidate.
++Read [ownership and classification](PROPOSAL.md#three-level-classification-and-ownership), [finding treatment](PROPOSAL.md#findings-and-repair-rechecks) and the matching [entrypoint draft](SKILL-DRAFT.md). Severity, scheduling priority and technical risk stay separate. Requested Low-priority work, required checks, actual failures and existing actionable findings keep their obligations. New evidence can promote a deferred observation to a material finding through current planning and assurance.
+ 
+-No active skill/configuration change, rule adoption/retirement, runtime implementation, remote publication or performance trial occurred. Lesson effectiveness remains NOT_RUN / UNVERIFIED. Earlier diagrams are historical illustrations; current text controls.
++The [change record](REVIEW-RESPONSE.md), [future independent-review prompt](REVIEW-PROMPT.md) and [source manifest](SOURCE-MANIFEST.json) preserve scope and provenance. The [v6 verdict](sources/independent-review-v6.md) approves v6 only. No new independent review was run for v7; its verdict remains pending. Record any later verdict outside this frozen candidate.
++
++Maximum-five batching, Git traceability, independent assurance/rechecks, specialist/final triggers, failure history and authority boundaries remain. No active skill/configuration, rule adoption, runtime implementation or remote publication changed. Runtime enforcement and cost/effectiveness claims remain NOT_RUN / UNVERIFIED. Earlier diagrams and numeric routing sources are historical; current proposal text controls this candidate.
+--- v6/REVIEW-PROMPT.md
++++ v7/REVIEW-PROMPT.md
+@@ -1,13 +1,17 @@
+-# Independent recheck of proposal revision 6
++# Independent review of proposal revision 7
+ 
+-Read-only candidate: `/Users/bow/.local/share/i2e-reviews/2026-11-03-jor840d8/proposals/i2e-v2-consolidated-review-v6`.
++Read-only candidate: `/Users/bow/.local/share/i2e-reviews/2026-11-03-jor840d8/proposals/i2e-v2-consolidated-review-v7`.
+ 
+-This is a fresh-context recheck by a reviewer distinct from the author and `/root/i2e_v5_maintainability_review`, the original finder. User direction: independently review the maintainability loop for rule sprawl, address findings, and keep the active workflow unchanged.
++This prompt is prepared for a later fresh independent review. It is not an invocation or a completed verdict. Review the exact candidate rather than treating v6 approval or the author's interpretation as evidence of v7 correctness.
+ 
+-Read PROPOSAL.md and SKILL-DRAFT.md, then REVIEW-RESPONSE.md, sources/independent-review-v5.md and the original user directions. Verify packet/source hashes and inspect `../i2e-v2-revision6-evidence/v5-to-v6.diff`. V5's design approval is historical evidence and does not approve v6.
++Read PROPOSAL.md and SKILL-DRAFT.md, then REVIEW-RESPONSE.md and sources/severity-routing-direction.md. Verify packet/source hashes and inspect `../i2e-v2-revision7-evidence/v6-to-v7.diff`. Consult historical sources only as needed. Challenge these concrete cases:
+ 
+-Independently assess I2E-V5-01: retirement of a rule for a removed platform must be possible without a successor, while historical evidence, unrelated protections, active obligations, authorization and profile invalidation remain intact. Check both retirement paths and historical retrieval at design level. Confirm the clarification has not added recurring instructions, new stages or a rule-promotion shortcut. Also challenge whether §11.1 can still create material rule sprawl or block ordinary delivery; unsupported preferences remain advisory and no-findings is valid.
++- High priority without a finding and Low priority with a High finding both select Astra ownership. Sol assurance remains independent; final-review triggers remain explicit.
++- Medium remains Sol-led with an explicit Sol/Terra implementation choice. No low-priority label or unknown impact can bypass a mandatory Astra/risk obligation.
++- Incidental Low observations have a cheap retrievable disposition without automatic tickets, repair loops or review stages. Explicitly requested work still proceeds.
++- A required failing check, prior actionable finding or credible unresolved material risk cannot disappear under the filter. Later material evidence can promote a deferred observation without losing history.
++- Severity and priority are separate from technical-risk assurance eligibility. Preserved batching, independence, rechecks, failure capture and adoption/release boundaries still hold.
+ 
+-Return APPROVE_FOR_IMPLEMENTATION, REVISE or HOLD_FOR_REQUIRED_INFORMATION with explicit I2E-V5-01 disposition and exact PROPOSAL/SKILL/PACKET-MANIFEST hashes. Supported new findings need stable ID, severity, exact lines, counterexample, consequence, smallest correction and validation. Distinguish documentary checks from runtime enforcement and measured effectiveness. No finding quota or approval presumption.
++Return APPROVE_FOR_IMPLEMENTATION, REVISE or HOLD_FOR_REQUIRED_INFORMATION with exact PROPOSAL/SKILL/PACKET-MANIFEST hashes. Routine findings must be supported High or Medium: stable ID, affected requirement, exact lines, evidence/counterexample, material consequence, smallest correction and validation. No finding quota or approval presumption. Do not inflate optional preferences. If a Low observation is encountered, provide only a compact DEFERRED_LOW record for the existing observation artifact (ID/key, source location, Low rationale, revisit trigger), outside routine findings; it does not require repair or re-review. Do not hunt for or inventory nits.
+ 
+-Do not edit files, execute the draft lifecycle, change active skills/configuration, create resources/chats, contact external services, implement, publish or delegate. Return the review for preservation outside the frozen packet. Report actual/unknown invocation provenance honestly; design approval grants no activation or release authority.
++Distinguish documentary checks from runtime enforcement and measured effectiveness. Do not edit files, execute the draft lifecycle, change active skills/configuration, create resources/chats, contact external services, implement, publish or delegate. Return the review for preservation outside the frozen packet. Report actual/unknown invocation provenance honestly; design approval grants no activation or release authority.
+--- v6/REVIEW-RESPONSE.md
++++ v7/REVIEW-RESPONSE.md
+@@ -1,13 +1,18 @@
+-# Revision 6 response to I2E-V5-01
++# Revision 7 — severity and routing change record
+ 
+-Status: AUTHOR_RESPONSE — INDEPENDENT_RECHECK_REQUIRED.
++Status: AUTHOR_CHANGE_RECORD — INDEPENDENT_REVIEW_PENDING.
+ 
+-The [v5 independent review](sources/independent-review-v5.md) returned APPROVE_FOR_IMPLEMENTATION, with no must-fix findings and one Low advisory finding. The [user](sources/review-and-repair-direction.md) authorized addressing findings while keeping the active workflow unchanged.
++The [user direction](sources/severity-routing-direction.md) authorizes a proposal update to High/Medium/Low severity and corresponding agent routing, with Low items dropped from routine work but kept for possible reconsideration. The prior instruction to keep the active workflow unchanged remains. This record is not an independent verdict.
+ 
+-| Finding | Author disposition | Exact correction and validation target |
++| Change | Concrete contract | Documentary validation target |
+ |---|---|---|
+-| I2E-V5-01: retirement wording could imply every obsolete rule needs a successor | ACCEPTED; narrow clarification | §11.1 now removes retired rules from active guidance and points to a replacement only where one exists. The entrypoint agrees. The existing retirement probe covers both replacement and no-successor paths while retaining history, unrelated protections and current obligations. |
++| Three-level labels | Separate severity and scheduling priority; retain technical risk/difficulty and historical labels | §3 and §6 agree; no numeric dispatch tiers in current authored guidance |
++| High ownership | High priority OR High finding OR Critical risk selects distinct Astra coordinator/lead/worker roles | High-priority/no-finding and Low-priority/High-finding probes; independent Sol reviews and final triggers preserved |
++| Medium ownership | Sol manager/lead and separate Sol implementation by default; Terra for explicitly planned bounded routine edits | Proposal and draft retain the earlier Sol/Terra division, recorded in exact plans |
++| Low treatment | DEFERRED_LOW in existing observations with ID/location/rationale/revisit trigger; omit from routine findings and automatic work | No automatic ticket, new store, repair/re-review, scheduled sweep or capture quota; requested Low-priority work remains |
++| Reclassification and obligations | New material evidence promotes Low with linked history, current plan and correct route | Required failed checks, prior actionable findings, real failures and uncertain material risks cannot be suppressed |
++| Maintainability and evaluation | Use existing observations, preserve adversarial review, measure suppression/routing separately | No automatic rules or extra per-task stage; claimed savings remain unverified |
+ 
+-Example to recheck: a rule applies only to a removed platform. With evidence that the risk no longer applies and the existing authorized review/adoption process, that guidance can leave the active set without inventing a replacement. Its historical rationale/evidence remains accessible and cannot reactivate the rule.
++The three-level priority field, OR trigger and Medium default-Sol/bounded-Terra split make the user's direction concrete; they remain reviewable proposed policy. This revision does not revise historical receipts, the frozen empirical reference or the installed profile.
+ 
+-No new store, schema, lifecycle stage, audit role, quota or acceptance gate is introduced. V5's existing observation/evaluation limits and all routing, assurance, batching and isolation/delivery contracts remain. The original v5 packet and reviewer report are preserved unchanged. A reviewer distinct from the author and original finder must assess the exact v6 bytes; author disposition is not independent closure. No runtime retirement/retrieval probe has been executed.
++V6 and its independent verdict remain unchanged. Its I2E-V5-01 closure is preserved, not reopened. Existing Low findings are not retroactively erased. All preserved requirement, phase, batching, isolation/delivery, assurance and recheck contracts remain except the explicitly proposed incidental-Low reporting/disposition change and ownership matrix. Future runtime work must implement and verify this proposal before adoption; document checks do not establish enforcement.
